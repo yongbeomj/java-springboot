@@ -1,0 +1,43 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/testdb
+    username: sa
+    password:
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    defer-datasource-initialization: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+  sql:
+    init:
+      mode: always
+
+logging:
+  level:
+    com.finance: debug
+    org.hibernate.type: trace
+
+jwt:
+  header: Authorization
+  secret-key:
+    access: asdDfas89123askdklAJSdfszdvnakldeiqsa52135azdwvdabvss214346acxvqionvnkaskldfkaskfweinifnasdjnviowe4234nefgjSDDNFKSJDN2
+    refresh: asfdkjlalsnjl3njkanflsnjkl4n2kln5nl3qnklanklnfklaj39r02u0ialwnejkfnjKLNLDFNLDasklfqoerhqejwjlasvnajlfnawlenrnqwlerqoe
+  access-token:
+    expiration: 1800000 # 30?
+  refresh-token:
+    expiration: 604800000 # 7?
